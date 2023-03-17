@@ -1,0 +1,12 @@
+footer.p-4.bg-white.rounded-lg.md:px-6.md:py-8.dark:bg-gray-900
+  .sm:flex.sm:items-center.sm:justify-between
+    = link_to "/" do
+      span.self-center.text-2xl.font-semibold.whitespace-nowrap.text-red-600
+        | Voter
+      span.self-center.text-2xl.font-semibold.whitespace-nowrap.dark:text-black
+        | media.org
+    ul.flex.flex-wrap.items-center.mb-6.text-sm.text-gray-500.sm:mb-0.dark:text-gray-400
+      li
+        = link_to "Home", root_path, class: "mr-4 hover:underline md:mr-6", data: {turbo:false}
+      li
+        = link_to "About/Contact", about_path, class: "mr-4 hover:underline md:mr-6", data: {turbo:false}

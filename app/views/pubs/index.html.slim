@@ -1,0 +1,26 @@
+h1.text-3xl.text-center.mb-6.font-semibold Publications: Articles & papers
+.relative.overflow-x-auto.mb-6
+  table.w-full.text-sm.text-left.text-gray-500.dark:text-gray-400#datatable[style="border-bottom:none"]
+    thead.text-xs.text-gray-700.uppercase.bg-gray-50.dark:bg-gray-700.dark:text-gray-400
+      tr
+        th.px-6.py-3.border-none[scope="col" style="padding-left:20px; border:none"]
+          | Date
+        th.px-6.py-3.border-none[scope="col" style="padding-left:20px; border:none"]
+          | Title & link
+        th.px-6.py-3.border-none[scope="col" style="padding-left:20px; border:none"]
+          | Pages
+        th.px-6.py-3.border-none[scope="col" style="padding-left:20px; border:none"]
+          | Stars
+        th.px-6.py-3.border-none[scope="col" style="padding-left:20px; border:none"]
+          | Country
+        th.px-6.py-3.border-none[scope="col" style="padding-left:20px; border:none"]
+          | Description
+    tbody
+      - @pubs.each do |pub|
+        = render "pubs/publication", pub: pub
+
+.px-6
+  p.text-sm
+    | Many of the above papers are also archived at
+    span.text-blue-700
+      = link_to('Social Science Research Network', 'http://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=1331') + '.'

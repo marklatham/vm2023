@@ -1,0 +1,28 @@
+h1.text-xl.text-center.mb-6.font-semibold Search results for: #{@query}
+
+.relative.overflow-x-auto.mb-6
+  table.m-auto.w-9/12.text-sm.text-left.text-gray-500.dark:text-gray-400[style="border-bottom:none"]
+    thead.text-xs.text-gray-700.uppercase.bg-gray-50.dark:bg-gray-700.dark:text-gray-400
+      tr
+    tbody
+      - @results.each do |result|
+        tr.bg-white.border-b.dark:bg-gray-800.dark:border-gray-700
+	        td.px-6.py-6
+	          = link_to result[:title].html_safe, result[:path].html_safe
+      - @search_models.each do |search_result|
+        - if search_result.class == Clipping
+          = render "clippings/clipping", clipping: search_result
+        - elsif search_result.class == Link
+          tr.bg-white.border-b.dark:bg-gray-800.dark:border-gray-700
+          tr.text-xs.text-gray-700.uppercase.bg-gray-50.dark:bg-gray-700.dark:text-gray-400
+            th.header.px-6.py-3
+              = search_result.category
+            = render "links/link", link: search_result
+        - elsif search_result.class == Presentation
+          = render "presentations/presentation", pres: search_result
+        - elsif search_result.class == Proposal
+          = render "proposals/preposal", prop: search_result
+        - elsif search_result.class == Pub
+          = render "pubs/publication", pub: search_result
+        - elsif search_result.class == Video
+          = render "videos/video", video: search_result

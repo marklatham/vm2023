@@ -1,0 +1,97 @@
+nav.bg-white.border-gray-200.px-2.sm:px-4.py-2.5.rounded.dark:bg-gray-900
+  .container.flex.flex-wrap.items-center.justify-between.mx-auto
+    = link_to "/" do
+      span.self-center.text-2xl.font-semibold.whitespace-nowrap.text-red-600
+        | Voter
+      span.self-center.text-2xl.font-semibold.whitespace-nowrap.dark:text-black
+        | media.org
+    .flex.md:order-2
+      button.md:hidden.text-gray-500.dark:text-gray-400.hover:bg-gray-100.dark:hover:bg-gray-700.focus:outline-none.focus:ring-4.focus:ring-gray-200.dark:focus:ring-gray-700.rounded-lg.text-sm.p-2.5.mr-1[type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false"]
+        svg.w-5.h-5[aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"]
+          path[fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"]
+        span.sr-only
+          | Search
+      .relative.hidden.md:block
+        .absolute.inset-y-0.left-0.flex.items-center.pl-3.pointer-events-none
+          svg.w-5.h-5.text-gray-500[aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"]
+            path[fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"]
+          span.sr-only
+            | Search icon
+        = form_tag search_path, :method=> 'get', role:"search" do
+          label.mb-2.text-sm.font-medium.text-gray-900.sr-only.dark:text-white[for="default-search"]
+            | Search
+          .relative
+            .absolute.inset-y-0.left-0.flex.items-center.pl-3.pointer-events-none
+              svg.w-5.h-5.text-gray-500.dark:text-gray-400[aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"]
+                path[stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"]
+            input#default-search.block.w-full.p-4.pl-10.text-sm.text-gray-900.border.border-gray-300.rounded-lg.bg-gray-50.focus:ring-blue-500.focus:border-blue-500.dark:bg-gray-700.dark:border-gray-600.dark:placeholder-gray-400.dark:text-white.dark:focus:ring-blue-500.dark:focus:border-blue-500[type="search" placeholder="Search" required name="query"]
+            button.text-white.absolute.right-2.5.bottom-2.5.bg-blue-700.hover:bg-blue-800.focus:ring-4.focus:outline-none.focus:ring-blue-300.font-medium.rounded-lg.text-sm.px-4.py-2.dark:bg-blue-600.dark:hover:bg-blue-700.dark:focus:ring-blue-800[type="submit" data-turbo="false"]
+              | Search
+      button.inline-flex.items-center.p-2.text-sm.text-gray-500.rounded-lg.md:hidden.hover:bg-gray-100.focus:outline-none.focus:ring-2.focus:ring-gray-200.dark:text-gray-400.dark:hover:bg-gray-700.dark:focus:ring-gray-600[data-collapse-toggle="navbar-search" type="button" aria-controls="navbar-search" aria-expanded="false"]
+        span.sr-only
+          | Open menu
+        svg.w-6.h-6[aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"]
+          path[fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"]
+    #navbar-search.items-center.justify-between.hidden.w-full.md:flex.md:w-auto.md:order-1
+      .relative.mt-3.md:hidden
+        .absolute.inset-y-0.left-0.flex.items-center.pl-3.pointer-events-none
+          svg.w-5.h-5.text-gray-500[aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"]
+            path[fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"]
+        = form_tag search_path, :method=> 'get', role:"search" do
+          label.mb-2.text-sm.font-medium.text-gray-900.sr-only.dark:text-white[for="default-search"]
+            | Search
+          .relative
+            .absolute.inset-y-0.left-0.flex.items-center.pl-3.pointer-events-none
+              svg.w-5.h-5.text-gray-500.dark:text-gray-400[aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"]
+                path[stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"]
+            input#default-search.block.w-full.p-4.pl-10.text-sm.text-gray-900.border.border-gray-300.rounded-lg.bg-gray-50.focus:ring-blue-500.focus:border-blue-500.dark:bg-gray-700.dark:border-gray-600.dark:placeholder-gray-400.dark:text-white.dark:focus:ring-blue-500.dark:focus:border-blue-500[type="search" placeholder="Search" required name="query"]
+            button.text-white.absolute.right-2.5.bottom-2.5.bg-blue-700.hover:bg-blue-800.focus:ring-4.focus:outline-none.focus:ring-blue-300.font-medium.rounded-lg.text-sm.px-4.py-2.dark:bg-blue-600.dark:hover:bg-blue-700.dark:focus:ring-blue-800[type="submit" data-turbo="false"]
+              | Search
+      ul.flex.flex-col.p-4.mt-4.border.border-gray-100.rounded-lg.bg-gray-50.md:flex-row.md:space-x-8.md:mt-0.md:text-sm.md:font-medium.md:border-0.md:bg-white.dark:bg-gray-800.md:dark:bg-gray-900.dark:border-gray-700
+        li
+          = link_to "Home", root_path, class: "block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent. dark:border-gray-700 #{active_if_path_is(root_path)}", data: {turbo: false}
+        li
+          = link_to "About/Contact", about_path, class: "block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent. dark:border-gray-700 #{active_if_path_is(about_path)}", data: {turbo: false}
+        li
+          .group.inline-block.relative
+            = link_to publications_path, class: "block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent. dark:border-gray-700 #{active_if_path_is(publications_path)} publication flex items-center", data: {turbo: false}
+              span
+                | Publications
+              span
+                svg.fill-current.h-4.w-4[xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"]
+                  path[d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"]
+            ul.absolute.hidden.text-gray-700.pt-1.group-hover:block.w-max[style="z-index:100;"]
+              li
+                = link_to "Articles & papers", publications_path, class: " #{active_if_path_is(publications_path)} bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap", data: {turbo: false}
+              li
+                = link_to "Press clippings", clippings_path, class: " #{active_if_path_is(clippings_path)} bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap", data: {turbo: false}
+              li
+                = link_to "Shareowner proposals", proposals_path, class: " #{active_if_path_is(proposals_path)} bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap", data: {turbo: false}
+              li
+                = link_to "Presentations/talks", presentations_path, class: " #{active_if_path_is(presentations_path)} bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap", data: {turbo: false}
+              li= link_to 'Twitter: votermedia', 'http://twitter.com/votermedia', class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap", data: {turbo: false}
+              li= link_to 'VM Democracy Blog', 'http://votermedia.blogspot.com/', class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap", data: {turbo: false}
+              li= link_to 'VM Finance Blog', 'http://votermedia.wordpress.com/', class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap", data: {turbo: false}
+          li
+            .group.inline-block.relative
+              = link_to videos_path, class: "block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent. dark:border-gray-700 #{active_if_path_is(videos_path)} videos flex items-center", data: {turbo: false}
+                span
+                  | Videos
+                span
+                  svg.fill-current.h-4.w-4[xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"]
+                    path[d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"]
+              ul.absolute.hidden.text-gray-700.pt-1.group-hover:block.w-max[style="z-index:100;"]
+                - videos = Video.order("id")
+                - videos.each do |video|
+                  li= link_to video.title, video_path(video), class: " #{active_if_path_is(video_path(video))} bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+          li
+            .group.inline-block.relative
+              = link_to links_path, class: "block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent. dark:border-gray-700 #{active_if_path_is(links_path)} videos flex items-center", data: {turbo: false}
+                span
+                  | Links
+                span
+                  svg.fill-current.h-4.w-4[xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"]
+                    path[d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"]
+              ul.absolute.hidden.text-gray-700.pt-1.group-hover:block.w-max[style="z-index:100;"]
+                - Link::CATEGORIES.each do |category|
+                  li= link_to category, "#{links_path}##{category}", class: "bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap", data: {turbo: false}

@@ -1,0 +1,7 @@
+h1.text-3xl.text-center.mb-6.font-semibold Listing videos
+.relative.overflow-x-auto.w-9/12.m-auto
+  table.w-full.text-sm.text-left.text-gray-500.dark:text-gray-400
+    thead.text-xs.text-gray-700.uppercase.bg-gray-50.dark:bg-gray-700.dark:text-gray-400
+    tbody
+      - @videos.each do |video|
+        = render "videos/video", video: video

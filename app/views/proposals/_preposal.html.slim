@@ -1,0 +1,27 @@
+tr.bg-white.border-b.dark:bg-gray-800.dark:border-gray-700
+  td.px-6.py-4.font-medium.text-gray-900.whitespace-nowrap.dark:text-white[scope="row"]
+    = prop.date_submitted
+  td.px-6.py-4
+    - if prop.company_url && (prop.company_url.size > 0)
+      = link_to(prop.company, prop.company_url, class: "text-blue-700")
+    - else
+      = prop.company
+  td.px-6.py-4
+    = prop.ticker
+  td.px-6.py-4
+    - if prop.proposal_url && (prop.proposal_url.size > 0)
+      = link_to(prop.proposal_type, 'proposals/' + prop.proposal_url, class: "text-blue-700")
+    - else
+      = prop.proposal_type.html_safe
+  td.px-6.py-4.w-1/3
+    = prop.correspondence.html_safe if prop.correspondence.present?
+  td.px-6.py-4
+    - if prop.proxy_url && (prop.proxy_url.size > 0)
+      = link_to prop.date_agm, prop.proxy_url, class: "text-blue-700"
+    - else
+      = prop.date_agm
+    br
+    - if prop.in_proxy
+      = (prop.yes_percent.to_s + '%&nbsp;yes').html_safe
+    - else
+      | Omitted

@@ -1,0 +1,36 @@
+h1.text-3xl.text-center.mb-2.font-semibold Votermedia Shareowner Proposal Campaign
+p.text-center.mb-6.text-xs
+  | The goals and rationale for these proposals are explained in the article
+  = link_to(' Proxy Voting Brand Competition', '/publications/ProxyVotingBrandCompetition.pdf', class: "text-blue-700") + '.'
+.relative.overflow-x-auto.mb-6
+  table.w-full.text-sm.text-left.text-gray-500.dark:text-gray-400
+    thead.text-xs.text-gray-700.uppercase.bg-gray-50.dark:bg-gray-700.dark:text-gray-400
+      tr
+        th.px-6.py-3[scope="col"]
+          | Date Submitted
+        th.px-6.py-3[scope="col"]
+          | Target Company
+        th.px-6.py-3[scope="col"]
+          | Ticker
+        th.px-6.py-3[scope="col"]
+          | Proposal
+        th.px-6.py-3[scope="col"]
+          | Management Arguments; Proponent Responses; SEC Decision
+        th.px-6.py-3[scope="col"]
+          | AGM date; Proxy link; Result
+    tbody
+      - @proposals.each do |prop|
+        = render "proposals/preposal", prop: prop
+
+.px-6
+  p.text-sm
+    | Only a representative sample of management arguments, proponent responses and SEC decisions are linked above.
+    The full public record of this correspondence can be found (for a fee) at
+    span.text-blue-700
+      = link_to('SECnet', 'http://secnet.cch.com/') + '.'
+
+  p.text-sm
+    | Proposals that made it into the proxy can also be found in the "DEF 14-a" filings at 
+    span.text-blue-700
+      = link_to('www.sec.gov','http://www.sec.gov') + ', '
+    with Board arguments.

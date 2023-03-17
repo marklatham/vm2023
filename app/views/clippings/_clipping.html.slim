@@ -1,0 +1,11 @@
+tr.bg-white.border-b.dark:bg-gray-800.dark:border-gray-700
+  td.px-6.py-4.font-medium.text-gray-900.whitespace-nowrap.dark:text-white[scope="row"]
+    = clipping.date_sequence
+  td.px-6.py-4
+    = link_to clipping.source, clipping.source_url
+  td.px-6.py-4
+    = clipping.author
+  td.px-6.py-4
+    = link_to clipping.title, clipping.title_url
+  td.px-6.py-4.w-1/3
+    = clipping.description.html_safe
