@@ -1,6 +1,6 @@
 nav.bg-white.border-gray-200.px-2.sm:px-4.py-2.5.rounded.dark:bg-gray-900
   .container.flex.flex-wrap.items-center.justify-between.mx-auto
-    = link_to "/" do
+    = link_to "/", data: {turbo: false} do
       span.self-center.text-2xl.font-semibold.whitespace-nowrap.text-red-600
         | Voter
       span.self-center.text-2xl.font-semibold.whitespace-nowrap.dark:text-black
