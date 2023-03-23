@@ -32,6 +32,8 @@ nav.bg-white.border-gray-200.px-2.sm:px-4.py-2.5.rounded.dark:bg-gray-900
           | Open menu
         svg.w-6.h-6[aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"]
           path[fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"]
+      - if current_admin_user.present?
+          = button_to "Logout", destroy_admin_user_session_path, method: :delete, data: {turbo: false},class: "mx-6 mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2 5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
     #navbar-search.items-center.justify-between.hidden.w-full.md:flex.md:w-auto.md:order-1
       .relative.mt-3.md:hidden
         .absolute.inset-y-0.left-0.flex.items-center.pl-3.pointer-events-none
@@ -54,7 +56,7 @@ nav.bg-white.border-gray-200.px-2.sm:px-4.py-2.5.rounded.dark:bg-gray-900
           = link_to "About/Contact", about_path, class: "block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent. dark:border-gray-700 #{active_if_path_is(about_path)}", data: {turbo: false}
         li
           .group.inline-block.relative
-            = link_to publications_path, class: "block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent. dark:border-gray-700 #{active_if_path_is(publications_path)} publication flex items-center", data: {turbo: false}
+            = link_to pubs_path, class: "block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent. dark:border-gray-700 #{active_if_path_is(pubs_path)} publication flex items-center", data: {turbo: false}
               span
                 | Publications
               span
@@ -62,7 +64,7 @@ nav.bg-white.border-gray-200.px-2.sm:px-4.py-2.5.rounded.dark:bg-gray-900
                   path[d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"]
             ul.absolute.hidden.text-gray-700.pt-1.group-hover:block.w-max[style="z-index:100;"]
               li
-                = link_to "Articles & papers", publications_path, class: " #{active_if_path_is(publications_path)} bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap", data: {turbo: false}
+                = link_to "Articles & papers", pubs_path, class: " #{active_if_path_is(pubs_path)} bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap", data: {turbo: false}
               li
                 = link_to "Press clippings", clippings_path, class: " #{active_if_path_is(clippings_path)} bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap", data: {turbo: false}
               li

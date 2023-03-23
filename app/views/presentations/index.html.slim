@@ -1,6 +1,9 @@
 h1.text-3xl.text-center.mb-6.font-semibold Presentations
 p.text-center.mb-6.text-ls
   | Talks by Mark Latham on Votermedia in corporations and democracies
+- if current_admin_user.present?
+  .text-right.mr-4.mb-6
+    = link_to "Create New Presentation", new_presentation_path, data: {turbo: false}, method: :get, class: "text-white text-right bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
 .relative.overflow-x-auto.w-9/12.m-auto.mb-6
   table.w-full.text-sm.text-left.text-gray-500.dark:text-gray-400
     thead.text-xs.text-gray-700.uppercase.bg-gray-50.dark:bg-gray-700.dark:text-gray-400
@@ -11,6 +14,9 @@ p.text-center.mb-6.text-ls
           | Institution / Event
         th.px-6.py-3[scope="col"]
           | Host
+        -if admin_user_signed_in?
+          th.px-6.py-3[scope="col"]
+            | Action
     tbody
       - @presentations.each do |pres|
         = render "presentations/presentation", pres: pres

@@ -1,0 +1,39 @@
+= form_for(@proposal) do |f|
+  .grid.gap-6.mb-6.md:grid-cols-3.w-4/5.m-auto
+    div
+      = f.label :date_submitted, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      = f.date_field :date_submitted, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", datepicker: true, placeholder: "Date Submited"
+    div
+      = f.label :date_agm, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      = f.date_field :date_agm, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", datepicker: true, placeholder: "Date AGM"
+    div
+      = f.label :company, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      = f.text_field :company, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500", placeholder: "Company"
+    div
+      = f.label :company_url, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      = f.text_field :company_url, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500", placeholder: "Company Url"
+    div
+      = f.label :ticker, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      = f.text_field :ticker, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500", placeholder: "Ticker"
+    div
+      = f.label :proposal_type, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      = f.text_field :proposal_type, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500", placeholder: "Proposal Type"
+    div
+      = f.label :proposal_url, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      = f.text_field :proposal_url, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500", placeholder: "Proposal Url"
+    div
+      = f.label :proxy_url, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      = f.text_field :proxy_url, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500", placeholder: "Proxy Url"
+    div
+      = f.label :yes_percent, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      = f.text_field :yes_percent, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500", type: "number", step: "0.1", placeholder: "Yes Percent"
+    div
+      = f.label :correspondence, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      = f.text_area :correspondence, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500",size: '50x5', placeholder: "Correspondence"
+    div
+      .flex.items-start.mb-6.items-center.justify-center.mt-12
+          = f.check_box :in_proxy, class: "w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800", type:"checkbox", value:""
+          = f.label :in_proxy, class: "block mb-2 ml-3 mt-2 text-sm font-medium text-gray-900 dark:text-white"
+  div.text-center
+    = f.submit class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2 5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800", data: {turbo: false}
+    = link_to "Back to Proposals", proposals_path, method: :get, class: "mx-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800", data: {turbo: false}

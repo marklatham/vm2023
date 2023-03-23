@@ -5,3 +5,7 @@ h1.text-3xl.text-center.mb-6.font-semibold
 .transcript-contariner.m-8
   h1.text-3xl.mb-6.font-semibold Transcript
   = @video.transcript.html_safe
+.d-inline-block.mx-6.d-flex[style="display: flex"]
+  -if current_admin_user.present?
+    = button_to "Edit", edit_video_path(@video), method: :get, data: {turbo: false}, class: "w-40 text-white text-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+  = link_to "Back to Videos", videos_path, method: :get, class: "w-40 text-white text-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800", data: {turbo: false}

@@ -1,6 +1,11 @@
 tr
   td.link.leftborder.rightborder.border-l-2.dark:border-gray-700.border-r-2.p-2
-    = link_to link.title, link.url, class: "font-medium text-blue-700 dark:text-blue-500 hover:underline"
+    div.d-flex.items-center.justify-between[style="display: flex;"]
+      span
+        = link_to link.title, link.url, class: "font-medium text-blue-700 dark:text-blue-500 hover:underline"
+      span.mt-2
+        -if current_admin_user.present?
+          = link_to "Edit Link", edit_link_path(link), method: :get, data: {turbo: false}, class: "text-white text-right bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
 tr
   td.border-b-2.dark:border-gray-700.border-r-2.border-l-2.dark:border-gray-700.border-r-2.mb-6.leading-7.px-24.text-xs
     = link.description.html_safe

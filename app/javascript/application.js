@@ -15,5 +15,14 @@ $(document).ready(function() {
     paging: false,
     searching: false,
     info: false,
+  "columnDefs": [
+    { "orderable": false, "targets": -1 }
+  ]
   });
+});
+
+$(document).ready(function(){
+  setTimeout(function() {
+    $('#alert-2, #alert-3').fadeOut('fast');
+  }, 5000);
 });

@@ -2,8 +2,12 @@ tr
   td
     | &nbsp;
 tr.text-xs.text-gray-700.uppercase.bg-gray-50.dark:bg-gray-700.dark:text-gray-400
-  th.header.px-6.py-3
-    = video.title
+  th.header.px-6.py-3.d-flex.items-center.justify-between[style="display: flex;"]
+    span
+      = video.title
+    .text-right.d-inline-block
+      -if current_admin_user.present?
+        = link_to "Edit Video", edit_video_path(video), method: :get, data: {turbo: false}, class: "text-white text-right bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
 tr.flex
   td.link.leftborder.rightborder.border-l-2.dark:border-gray-700.p-2.border-b-2
     iframe[width="420" height="315" src="https://www.youtube.com/embed/#{video.url}"]

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # devise_for :admin_users
+  devise_for :admin_users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :links
   resources :presentations
   resources :proposals
-  resources :pubs, as: :publications
+  resources :pubs
   resources :videos
 
   get "/about", to: "home#about", as: "about"

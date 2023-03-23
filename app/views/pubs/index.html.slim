@@ -1,4 +1,7 @@
 h1.text-3xl.text-center.mb-6.font-semibold Publications: Articles & papers
+- if current_admin_user.present?
+  .text-right.mr-4.mb-6
+    = link_to "Create New Publication", new_pub_path, data: {turbo: false}, class: "text-white text-right bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
 .relative.overflow-x-auto.mb-6
   table.w-full.text-sm.text-left.text-gray-500.dark:text-gray-400#datatable[style="border-bottom:none"]
     thead.text-xs.text-gray-700.uppercase.bg-gray-50.dark:bg-gray-700.dark:text-gray-400
@@ -15,6 +18,9 @@ h1.text-3xl.text-center.mb-6.font-semibold Publications: Articles & papers
           | Country
         th.px-6.py-3.border-none[scope="col" style="padding-left:20px; border:none"]
           | Description
+        -if admin_user_signed_in?
+          th.px-6.py-3[scope="col"]
+            | Action
     tbody
       - @pubs.each do |pub|
         = render "pubs/publication", pub: pub
